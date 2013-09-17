@@ -1,0 +1,19 @@
+<div class="hero-unit">
+  <h2>All BuildingInformations</h2>
+  <%- linkTo('Create a new BuildingInformation', addBuildingInformationPath, {class: 'btn pull-right'}); %>
+</div>
+
+<div id="buildingInformations-list">
+<% if (buildingInformations) { %>
+<% for (var i = 0, ii = buildingInformations.length; i < ii; i++) { %>
+  <div class="row list-item" id="buildingInformation-<%= buildingInformations[i].id; %>">
+    <div class="span8">
+      <h3><%- linkTo(buildingInformations[i].name, buildingInformationPath(buildingInformations[i].id)); %></h3>
+    </div>
+    <div class="span4">
+      <h3><i class="icon-list-alt"></i><%= buildingInformations[i].id; %></h3>
+    </div>
+  </div>
+<% } %>
+<% } %>
+</div>

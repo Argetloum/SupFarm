@@ -1,0 +1,66 @@
+<!-- Lets talk about geddy -->
+<div class="hero-unit" xmlns="http://www.w3.org/1999/html">
+
+  <div class="row">
+
+    <div id="woodbox" class="pull-right span3">
+      <form method="POST">
+
+        <% if(params.errors) { %>
+        <div class="control-group">
+          <ul>
+            <% for(var err in params.errors) { %>
+            <li><%= params.errors[err]; %></li>
+            <% } %>
+          </ul>
+        </div>
+        <% } %>
+
+        <div class="control-group">
+          <label class="control-label">Login :</label>
+
+          <div class="controls">
+            <input type="text" name="login" placeholder="login…" required="required">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label">Password :</label>
+
+          <div class="controls">
+            <input type="password" name="password" placeholder="******" required="required">
+          </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Login !</button>
+
+      </form>
+
+      <br/>
+
+      <div id="farmer">
+
+      </div>
+      <div id="create">
+        <%- linkTo('Create your account here.', '/users/add') %>
+      </div>
+
+
+    </div>
+
+    <div class="span6">
+
+
+      <h1><span>Welcome to </span>SupFarm</h1>
+
+      <div id="supfarmBackground">
+
+      </div>
+
+    </div>
+
+
+  </div>
+  <div class="row">
+  </div>
+</div>

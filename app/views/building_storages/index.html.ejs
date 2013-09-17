@@ -1,0 +1,19 @@
+<div class="hero-unit">
+  <h2>All BuildingStorages</h2>
+  <%- linkTo('Create a new BuildingStorage', addBuildingStoragePath, {class: 'btn pull-right'}); %>
+</div>
+
+<div id="buildingStorages-list">
+<% if (buildingStorages) { %>
+<% for (var i = 0, ii = buildingStorages.length; i < ii; i++) { %>
+  <div class="row list-item" id="buildingStorage-<%= buildingStorages[i].id; %>">
+    <div class="span8">
+      <h3><%- linkTo(buildingStorages[i].id, buildingStoragePath(buildingStorages[i].id)); %></h3>
+    </div>
+    <div class="span4">
+      <h3><i class="icon-list-alt"></i><%= buildingStorages[i].id; %></h3>
+    </div>
+  </div>
+<% } %>
+<% } %>
+</div>

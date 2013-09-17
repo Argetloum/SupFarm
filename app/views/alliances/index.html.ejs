@@ -1,0 +1,19 @@
+<div class="hero-unit">
+  <h2>All Alliances</h2>
+  <%- linkTo('Create a new Alliance', addAlliancePath, {class: 'btn pull-right'}); %>
+</div>
+
+<div id="alliances-list">
+<% if (alliances) { %>
+<% for (var i = 0, ii = alliances.length; i < ii; i++) { %>
+  <div class="row list-item" id="alliance-<%= alliances[i].id; %>">
+    <div class="span8">
+      <h3><%- linkTo(alliances[i].name, alliancePath(alliances[i].id)); %></h3>
+    </div>
+    <div class="span4">
+      <h3><i class="icon-list-alt"></i><%= alliances[i].id; %></h3>
+    </div>
+  </div>
+<% } %>
+<% } %>
+</div>

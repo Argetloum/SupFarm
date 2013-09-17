@@ -1,0 +1,25 @@
+<div class="control-group">
+    <label for="email" class="control-label">Email</label>
+
+    <div class="controls">
+        <%- contentTag('input', user.email, {type:'text', class:'span6', name:'email', required:'required'}) %>
+    </div>
+</div>
+<div class="control-group">
+    <label for="password" class="control-label">Password</label>
+
+    <div class="controls">
+        <%- contentTag('input', '', {type:'password', class:'span6', name:'password', required:'required'}) %>
+    </div>
+</div>
+<div class="control-group">
+    <label for="password" class="control-label">Choose difficulty</label>
+
+    <div class="controls">
+        <select name="difficulty">
+            <option value="0">Easy</option>
+            <option value="1">Normal</option>
+            <option value="2">Hard</option>
+        </select>
+    </div>
+</div>

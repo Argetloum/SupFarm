@@ -1,0 +1,19 @@
+<div class="hero-unit">
+  <h2>All Tiles</h2>
+  <%- linkTo('Create a new Tile', addTilePath, {class: 'btn pull-right'}); %>
+</div>
+
+<div id="tiles-list">
+<% if (tiles) { %>
+<% for (var i = 0, ii = tiles.length; i < ii; i++) { %>
+  <div class="row list-item" id="tile-<%= tiles[i].id; %>">
+    <div class="span8">
+      <h3><%- linkTo(tiles[i].id, tilePath(tiles[i].id)); %></h3>
+    </div>
+    <div class="span4">
+      <h3><i class="icon-list-alt"></i><%= tiles[i].id; %></h3>
+    </div>
+  </div>
+<% } %>
+<% } %>
+</div>

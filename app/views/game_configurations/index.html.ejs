@@ -1,0 +1,36 @@
+<div class="hero-unit">
+    <form id="gameConfiguration-form" class="form-horizontal"
+          action="/game_configurations/<%= gameConfiguration.id %>?_method=PUT" method="POST">
+        <fieldset>
+            <legend>Update the game configuration</legend>
+            <% if(params.errors) { %>
+            <div class="control-group">
+                <ul>
+                    <% for(var err in params.errors) { %>
+                    <li><%= params.errors[err]; %></li>
+                    <% } %>
+                </ul>
+            </div>
+            <% } %>
+            <div class="control-group">
+                <label for="startMoney" class="control-label">Start Money</label>
+
+                <div class="controls">
+                    <%- contentTag('input', '', {type:'number', class:'span2', name:'startMoney', required:'required',
+                    value:gameConfiguration.startMoney}) %>
+                </div>
+            </div>
+            <div class="control-group">
+                <label for="width" class="control-label">Territory Size</label>
+
+                <div class="controls">
+                    <%- contentTag('input', '', {type:'number', class:'span2', name:'territorySize',
+                    required:'required', value:gameConfiguration.territorySize}) %>
+                </div>
+            </div>
+            <div class="form-actions">
+                <%- contentTag('input', 'Save', {type: 'submit', class: 'btn btn-primary'}) %>
+            </div>
+        </fieldset>
+    </form>
+</div>

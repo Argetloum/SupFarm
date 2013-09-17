@@ -1,0 +1,14 @@
+{
+  "name": "SupFarm",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node node_modules/geddy/bin/cli.js -e development"
+  },
+  "dependencies": {
+    "geddy": "0.6.x"
+  },
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  }
+}

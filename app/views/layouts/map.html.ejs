@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SupFarm</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width"/>
+
+  <!-- The HTML5 shim, for IE6-8 support of HTML elements -->
+  <!--[if lt IE 9]>
+  <%- scriptLink('http://html5shim.googlecode.com/svn/trunk/html5.js', {type:'text/javascript'}) %>
+  <![endif]-->
+
+  <%- scriptLink('/js/jquery.min.js', {type:'text/javascript'}) %>
+  <%- scriptLink('/js/bootstrap.min.js', {type:'text/javascript'}) %>
+  <%- scriptLink('/js/core/core.js', {type: 'text/javascript'}) %>
+  <!-- <%- scriptLink('/js/models/your_model.js', {type:'text/javascript'}) %> -->
+  <%- scriptLink('/js/config/init.js', {type: 'text/javascript'}) %>
+
+  <%- styleLink('/css/bootstrap.min.css', {rel:'stylesheet'}) %>
+  <%- styleLink('/css/bootstrap.responsive.min.css', {rel:'stylesheet'}) %>
+  <%- styleLink('/css/style.css', {rel:'stylesheet'}) %>
+
+  <!-- The fav and touch icons -->
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="i-bar"><i class="icon-chevron-down icon-white"></i></span>
+      </a>
+      <%- linkTo('SupFarm', '/', {class: 'brand'}) %>
+
+      <ul class="nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Constructions
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a id="addSiloLink"><span><img src="img/textures/silo.png" alt="silo"/></span> Silo</a></li>
+            <li><a id="addBarnLink"><span><img src="img/textures/barn.png" alt="grenier"/></span> Grenier</a></li>
+            <li><a id="addColdStorageLink"><span><img src="img/textures/coldStorage.png" alt="chambre froide"/></span>
+              Chambre
+              froide</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Plantations
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a id="addAubergineLink"><span><img src="img/textures/aubergine4.png" alt="aubergine"/></span> Aubergine</a>
+            </li>
+            <li><a id="addCarrotLink"><span><img src="img/textures/carrot4.png" alt="carot"/></span> Carot</a></li>
+            <li><a id="addCornLink"><span><img src="img/textures/corn4.png" alt="corn"/></span> Corn</a></li>
+            <li><a id="addTomatoLink"><span><img src="img/textures/tomato4.png" alt="tomato"/></span> Tomato</a></li>
+            <li><a id="addPepperLink"><span><img src="img/textures/pepper4.png" alt="pepper"/></span> Pepper</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Actions
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a id="enableAttackLink"><span><img src="img/textures/marteau.png" alt="arme"/></span>Attack</a></li>
+            <li><a id="enableWateringLink"><span><img src="img/textures/water.png" alt="water"/></span> Watering</a>
+            </li>
+            <li><a id="enableFertilisingLink"><span><img src="img/textures/fertilize.png" alt="fertilize"/></span>
+              Fertilising</a></li>
+            <li><a id="enableSellLink"><span><img src="img/textures/sell.png" alt="sell"/></span> Sell</a></li>
+            <li><a id="enableHarvestingLink"><span><img src="img/textures/harvest.png" alt="harvest"/></span> Harvest</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a id="enable-store-link">Weapon store</a>
+        </li>
+      </ul>
+      <ul class="nav pull-right" style="margin-left: 40px;">
+        <li id="configLink">
+        </li>
+        <li>
+          <%- linkTo('<i class="icon-off"></i> Logout', '/logout') %>
+        </li>
+      </ul>
+      <div class="pull-right" style="margin-top: 10px; color: #049c24;">
+        Money : <span id="money">0</span> | Life : <span id="life">0</span> | Level : <span id="level">0</span>
+      </div>
+      <div class="pull-right" style="margin-top: 10px; margin-right: 50px; color: #049c24;" id="selectedObjectInformation">No data</div>
+
+    </div>
+  </div>
+</div>
+<div class="container">
+  <%- yield(); %>
+</div>
+</body>
+</html>

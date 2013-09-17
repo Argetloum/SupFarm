@@ -1,0 +1,44 @@
+<div class="control-group">
+  <label for="email" class="control-label">email</label>
+  <div class="controls">
+    <%- contentTag('input', user.email, {type:'text', class:'span6', name:'email'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="password" class="control-label">password</label>
+  <div class="controls">
+    <%- contentTag('input', '', {type:'password', class:'span6', name:'password'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="life" class="control-label">life</label>
+  <div class="controls">
+    <%- contentTag('input', user.life, {type:'number', class:'span2', name:'life'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="money" class="control-label">money</label>
+  <div class="controls">
+    <%- contentTag('input', user.money, {type:'number', class:'span2', name:'money'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="level" class="control-label">level</label>
+  <div class="controls">
+    <%- contentTag('input', user.level, {type:'number', class:'span2', name:'level'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="isAdmin" class="control-label">isAdmin</label>
+  <div class="controls">
+    <select name="isAdmin", class="span1">
+      <% if(user.isAdmin) { -%>
+      <option>false</option>
+      <option selected>true</option>
+      <% } else { -%>
+      <option selected>false</option>
+      <option>true</option>
+      <% } -%>
+    </select>
+  </div>
+</div>

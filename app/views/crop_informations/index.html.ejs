@@ -1,0 +1,19 @@
+<div class="hero-unit">
+  <h2>All CropInformations</h2>
+  <%- linkTo('Create a new CropInformation', addCropInformationPath, {class: 'btn pull-right'}); %>
+</div>
+
+<div id="cropInformations-list">
+<% if (cropInformations) { %>
+<% for (var i = 0, ii = cropInformations.length; i < ii; i++) { %>
+  <div class="row list-item" id="cropInformation-<%= cropInformations[i].id; %>">
+    <div class="span8">
+      <h3><%- linkTo(cropInformations[i].name, cropInformationPath(cropInformations[i].id)); %></h3>
+    </div>
+    <div class="span4">
+      <h3><i class="icon-list-alt"></i><%= cropInformations[i].id; %></h3>
+    </div>
+  </div>
+<% } %>
+<% } %>
+</div>
